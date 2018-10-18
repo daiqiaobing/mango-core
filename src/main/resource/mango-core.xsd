@@ -1,22 +1,44 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://maven.apache.org/POM/4.0.0"
-           xmlns="http://maven.apache.org/POM/4.0.0"  elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://github.com/daiqiaobing/mango-core"
+           xmlns="https://github.com/daiqiaobing/mango-core"  elementFormDefault="qualified">
     <xs:element name="configuration">
         <xs:complexType>
-            <xs:all>
+            <xs:sequence>
                 <xs:element name="title" type="xs:string" default="应用配置文件" minOccurs="0"/>
-                <xs:element name="property" minOccurs="0">
+                <xs:element name="property" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="key"/>
-                            <xs:element name="value"/>
-                            <xs:element name="type"/>
+                            <xs:element name="key" type="xs:string"/>
+                            <xs:element name="value" type="xs:string"/>
+                            <xs:element name="type" default="property">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="property"/>
+                                        <xs:enumeration value="xml"/>
+                                        <xs:enumeration value="yaml"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <!--对应的作用域-->
+                            <xs:element name="scope" default="global">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="single"/>
+                                        <xs:enumeration value="global"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
                             <xs:element name="description"  minOccurs="0"/>
                         </xs:sequence>
                     </xs:complexType>
+
                 </xs:element>
-            </xs:all>
+            </xs:sequence>
         </xs:complexType>
+
+
+
     </xs:element>
 
 </xs:schema>
