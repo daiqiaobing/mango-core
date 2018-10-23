@@ -15,13 +15,13 @@ public @interface FieldDesc {
 
     /**
      * 字段描述
-     * @return
+     * @return 默认返回空字符串
      */
     String desc() default "";
 
     /**
      * 是否使用该字段
-     * @return
+     * @return 默认返回true
      */
     boolean use() default true;
 

@@ -26,4 +26,13 @@ public class EnvConstant {
     /**项目class对应的基本路径*/
     public static final String FILE_BASIC_PATH = EnvConstant.class.getResource("/").getPath();
 
+    /**文件对应的作用域为：global*/
+    public static final String FILE_SCOPE_GLOBAL = "global";
+
+    /**文件对应的作用域为：single*/
+    public static final String FILE_SCOPE_SINGLE = "single";
+
+    /**yaml中key连接符号*/
+    public static final String FILE_YML_KEY_JOIN = ".";
+
 }

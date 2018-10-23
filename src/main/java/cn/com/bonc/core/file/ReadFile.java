@@ -21,11 +21,11 @@ public class ReadFile {
 
 
     /**
-     * 读取文件
-     * @param filePath
-     * @param clazz
-     * @param <T>
-     * @return
+     * 读取文件，并且将数据转换为对象
+     * @param filePath 文件路径
+     * @param clazz class类
+     * @param <T> 范型
+     * @return 读取文件的结果
      */
     public static <T> List<T> getBeans(String filePath, Class<T> clazz) throws Exception {
         String encode = PropertiesConfig.getValueByKey("file_read_encode", "utf-8");
@@ -46,10 +46,10 @@ public class ReadFile {
 
     /**
      * 读取文件
-     * @param file
-     * @param clazz
-     * @param <T>
-     * @return
+     * @param file 文件对象
+     * @param clazz class类
+     * @param <T> 范型
+     * @return 将文件中的数据转换为对象
      */
     public static <T> List<T> getBeans(File file, Class<T> clazz, String encode, String delimiter) throws Exception {
         ArrayList<T> result = new ArrayList<>();
@@ -68,10 +68,10 @@ public class ReadFile {
 
     /**
      * 读取文件
-     * @param in
-     * @param clazz
-     * @param <T>
-     * @return
+     * @param in 输入流
+     * @param clazz class类
+     * @param <T> 范型
+     * @return 将输入流转换为对象
      */
     public static <T> List<T> getBeans(InputStream in, Class<T> clazz, String encode, String delimiter) throws Exception {
         ArrayList<T> result = new ArrayList<>();

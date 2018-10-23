@@ -100,8 +100,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key key
+     * @return 对应的值
      */
     public String getValue(String ...key){
 
@@ -120,8 +120,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static String getValueByKey(String key){
         return getInstance().getValue(key);
@@ -129,8 +129,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static String getValueByKey(String key, String... val){
         String curVal = getValueByKey(key);
@@ -140,8 +140,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static int getValueByKey(String key, int... num){
         String str = getInstance().getValue(key);
@@ -158,8 +158,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static float getValueByKey(String key, float... num){
         String str = getInstance().getValue(key);
@@ -176,8 +176,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static Double getValueByKey(String key, double... num){
         String str = getInstance().getValue(key);
@@ -194,8 +194,8 @@ public class PropertiesConfig {
 
     /**
      * 根据key获取配置文件中的value
-     * @param key
-     * @return
+     * @param key 索引
+     * @return 索引对应的值
      */
     public static Long getValueByKey(String key, long... num){
         String str = getInstance().getValue(key);

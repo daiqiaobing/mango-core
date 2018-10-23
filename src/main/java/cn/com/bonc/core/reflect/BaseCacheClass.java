@@ -31,9 +31,9 @@ public class BaseCacheClass extends BaseCache{
 
     /**
      * 创建类对象
-     * @param className
-     * @return
-     * @throws ClassNotFoundException
+     * @param className class名
+     * @return 返回class类
+     * @throws ClassNotFoundException 没有找到对应的class
      */
     protected Class createClass(String className) throws ClassNotFoundException {
         return  Class.forName(className);

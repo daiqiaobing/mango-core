@@ -16,9 +16,9 @@ public class MapUtil {
 
     /**
      * map中的数据格式为<String, List>,向List中添加数据
-     * @param map
-     * @param key
-     * @param data
+     * @param map map集合
+     * @param key 索引
+     * @param data 数据
      */
     public static void addListData(Map<String, List> map, String key, Object data){
         if (map.containsKey(key)){

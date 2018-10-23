@@ -20,9 +20,9 @@ public class BaseCacheMethod extends BaseCache{
 
     /**
      * 比较参数类型是否相同
-     * @param method
-     * @param parameters
-     * @return
+     * @param method 方法
+     * @param parameters 参数
+     * @return 比较参数类型是否相同
      */
     protected static boolean compareMethodType(Method method, Class<?>... parameters){
         Class<?>[] curParameters = method.getParameterTypes();
@@ -50,11 +50,11 @@ public class BaseCacheMethod extends BaseCache{
 
     /**
      * 根据传递的参数，获取满足条件的method
-     * @param methods
-     * @param methodName
-     * @param parameters
-     * @return
-     * @throws NoSuchMethodException
+     * @param methods 方法
+     * @param methodName 方法名
+     * @param parameters 参数
+     * @return 根据传递的参数，获取满足条件的method
+     * @throws NoSuchMethodException 没有方法异常
      */
     protected static Method getSatisfyMethod(Method[] methods, String methodName, Class<?>... parameters) throws NoSuchMethodException {
         for (Method curMethod: methods){

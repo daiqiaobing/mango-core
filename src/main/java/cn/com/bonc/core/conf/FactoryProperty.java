@@ -2,43 +2,44 @@ package cn.com.bonc.core.conf;
 
 import cn.com.bonc.core.constant.EnvConstant;
 import cn.com.bonc.core.entity.ConfEntity;
+import cn.com.bonc.core.entity.ConfResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.*;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * @author dailiming
  * @version v1
- * 读取xml中对应的数据
- * @create 2018-10-18 13:52
+ * property读取工厂
+ * @create 2018-10-22 11:16
  **/
 
-public class ReadProperty implements ReadConfiguration{
+public class
+FactoryProperty implements FactoryConfiguration {
 
-    private Logger logger = LoggerFactory.getLogger(ReadProperty.class);
-
-
-    @Override
-    public Map<String, String> getGlobalResult() {
-        return null;
-    }
+    private Logger logger = LoggerFactory.getLogger(FactoryProperty.class);
 
     @Override
-    public Map<String, Map> getSingleResult() {
-        return null;
-    }
-
-    @Override
-    public void read(List<ConfEntity> confEntities) throws IOException {
+    public Map<ConfEntity, Map<Object, ConfResultEntity>> read(List<ConfEntity> confEntities) throws IOException {
+        Map<ConfEntity, Map<Object, ConfResultEntity>> result = new HashMap<>(16);
         for (ConfEntity confEntity: confEntities){
             if (EnvConstant.FILE_TYPE_PROPERTY.equals(confEntity.getType())){
+                Map<Object, ConfResultEntity> curResult = new HashMap<>(16);
                 Properties property = getPropertyByFile(confEntity.getValue());
+                Enumeration<Object> keys = property.keys();
+                while (keys.hasMoreElements()){
+                    Object key = keys.nextElement();
+                    if (key == null){
+                        continue;
+                    }
+                    curResult.put(key,  new ConfResultEntity(property.get(key)));
+                }
+                result.put(confEntity, curResult);
             }
         }
+        return result;
     }
 
     /**
@@ -65,4 +66,5 @@ public class ReadProperty implements ReadConfiguration{
         }
         return property;
     }
+
 }

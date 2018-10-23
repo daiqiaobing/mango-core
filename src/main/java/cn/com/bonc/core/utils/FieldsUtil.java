@@ -29,9 +29,9 @@ public class FieldsUtil {
 
     /**
      * 从缓存中获取
-     * @param eClass
-     * @param <E>
-     * @return
+     * @param eClass class
+     * @param <E> 范型
+     * @return 属性
      */
     public static <E> Field[] getFieldByName(Class<E> eClass){
         SoftReference<Field[]> curFields = fields.get(eClass.toString());
@@ -53,8 +53,8 @@ public class FieldsUtil {
 
     /**
      * 从缓存中获取
-     * @param field
-     * @return
+     * @param field 属性
+     * @return 注解
      */
     public static Annotation[] getAnnotationByField(Field field){
         SoftReference<Annotation[]> curAnnotation = annotations.get(field.toString());
@@ -73,8 +73,8 @@ public class FieldsUtil {
 
     /**
      * 获取字段的描述
-     * @param field
-     * @return
+     * @param field 属性
+     * @return  描述
      */
     public static String getDesc(Field field) {
         String result = null;
@@ -98,7 +98,7 @@ public class FieldsUtil {
 
     /**
      * 获取可用的字段 其中FieldDesc注解中use为true
-     * @return
+     * @return 属性集合
      */
     public static List<Field> getUseField(Field[] fields){
         LinkedList<Field> curFields = new LinkedList<>();
@@ -119,8 +119,8 @@ public class FieldsUtil {
 
     /**
      * 获取最大的位置
-     * @param fields
-     * @return
+     * @param fields 属性
+     * @return 最大
      */
     public static int getMaxPlace(Field[] fields){
         int max = 0;

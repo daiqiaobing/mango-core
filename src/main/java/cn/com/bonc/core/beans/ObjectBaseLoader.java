@@ -28,8 +28,8 @@ public class ObjectBaseLoader {
 
     /**
      * 获取该字段在文件中的位置
-     * @param field
-     * @return
+     * @param field 属性
+     * @return 字段在文件中的位置，没有找到则返回-1
      */
     protected static int getPlace(Field field) throws IllegalAccessException, InstantiationException {
         Annotation annotation = ReflectCache.getAnnotation(field, FieldPlaceArray.class);
@@ -44,11 +44,11 @@ public class ObjectBaseLoader {
 
     /**
      * 根据类型赋值
-     * @param field
-     * @param t
-     * @param data
-     * @param <T>
-     * @throws IllegalAccessException
+     * @param field 属性
+     * @param t 属性所在对象
+     * @param data 数据
+     * @param <T> 范型
+     * @throws IllegalAccessException 没有访问权限
      */
     protected static <T> void setValueByType(Field field, T t, Object data) throws IllegalAccessException {
         Type genericType = field.getGenericType();
@@ -68,8 +68,8 @@ public class ObjectBaseLoader {
 
     /**
      * 获取最大的位置
-     * @param fields
-     * @return
+     * @param fields 所有属性
+     * @return 返回属性中最大的位置
      */
     protected static int getMaxPlace(Field[] fields) throws IllegalAccessException, InstantiationException {
         int max = 0;
@@ -91,7 +91,7 @@ public class ObjectBaseLoader {
 
     /**
      * 获取缓存对象
-     * @return
+     * @return 返回Map
      */
     protected static Map<String, Integer> getCachePlace(){
         if (cachePlace.get() == null){

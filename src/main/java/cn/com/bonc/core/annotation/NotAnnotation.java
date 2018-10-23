@@ -13,8 +13,16 @@ import java.lang.annotation.Target;
 @Target({ElementType.PACKAGE, ElementType.FIELD, ElementType.CONSTRUCTOR, ElementType.METHOD, ElementType.TYPE})
 public @interface NotAnnotation {
 
+    /**
+     * 描述
+     * @return 默认返回空字符串
+     */
     String desc() default "";
 
+    /**
+     * 字段是否使用
+     * @return 默认返回true
+     */
     boolean use() default true;
 
 }

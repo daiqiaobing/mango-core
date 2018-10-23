@@ -12,7 +12,7 @@ public interface BaseMonitor<T, R> {
 
     /**
      * 提交任务
-     * @param tasks
+     * @param tasks 任务
      */
     void submit(T ...tasks);
 

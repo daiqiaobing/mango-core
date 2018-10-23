@@ -17,11 +17,11 @@ public class ObjectLoader<T> extends ObjectBaseLoader{
 
     /**
      * 将数组中的数据转换为实体
-     * @param tClass
-     * @param data
-     * @param <T>
-     * @return
-     * @throws Exception
+     * @param tClass class类
+     * @param data 数据
+     * @param <T> 范型
+     * @return 实体对象
+     * @throws Exception 转换过程出现异常
      */
     public static  <T> T getBean(Class<T> tClass, Object[] data) throws Exception {
         T t = tClass.newInstance();
@@ -51,10 +51,10 @@ public class ObjectLoader<T> extends ObjectBaseLoader{
 
     /**
      * 将values赋值到对象中
-     * @param clazz
-     * @param values
-     * @param <T>
-     * @return
+     * @param clazz class类
+     * @param values 值
+     * @param <T> 范型
+     * @return 实体对象
      */
     public static <T> T getBean(Class<T> clazz, Map<String, String> values) throws IllegalAccessException, InstantiationException {
         // todo

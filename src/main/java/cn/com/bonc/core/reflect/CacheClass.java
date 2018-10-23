@@ -15,8 +15,8 @@ public class CacheClass extends BaseCacheClass{
 
     /**
      * 如果class不存在，则创建
-     * @param clazzName
-     * @return
+     * @param clazzName class名
+     * @return Class类
      */
     protected static Class getClazz(String clazzName) throws ClassNotFoundException {
         ConcurrentHashMap<String, Class> classes = getInstance().getClasses();
@@ -32,8 +32,8 @@ public class CacheClass extends BaseCacheClass{
 
     /**
      * 如果class不存在，则创建
-     * @param t
-     * @return
+     * @param t 对象t
+     * @return class对象
      */
     protected static <T> Class getClazz(Class<T> t) {
         ConcurrentHashMap<String, Class> classes = getInstance().getClasses();
@@ -50,8 +50,8 @@ public class CacheClass extends BaseCacheClass{
 
     /**
      * 如果对象的实例
-     * @param clazzName
-     * @return
+     * @param clazzName class名
+     * @return 对象
      */
     protected static Object getSingleInstance(String clazzName) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         ConcurrentHashMap<String, Object> instances = getInstance().initInstance();
@@ -67,8 +67,8 @@ public class CacheClass extends BaseCacheClass{
 
     /**
      * 如果对象的实例
-     * @param t
-     * @return
+     * @param t class
+     * @return 对象的实例
      */
     public static <T> Object getSingleInstance(Class<T> t) throws IllegalAccessException, InstantiationException {
         ConcurrentHashMap<String, Object> instances = getInstance().initInstance();
@@ -84,7 +84,7 @@ public class CacheClass extends BaseCacheClass{
 
     /**
      * 多线程安全的单列模式
-     * @return
+     * @return 获取实例
      */
     private static CacheClass getInstance(){
         if (cacheClass == null){

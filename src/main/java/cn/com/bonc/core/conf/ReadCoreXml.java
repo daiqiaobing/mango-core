@@ -27,10 +27,9 @@ public class ReadCoreXml {
 
     private Logger logger = LoggerFactory.getLogger(ReadCoreXml.class);
 
-
     /**
      * 读取core.xml文件，将文件中的数据写入到集合中
-     * @throws DocumentException
+     * @throws DocumentException 文档解析异常
      */
     private void read() throws DocumentException {
         SAXReader saxReader = new SAXReader();
@@ -57,8 +56,9 @@ public class ReadCoreXml {
 
     /**
      * 将property节点下的数据转换为对象
-     * @param element
-     * @return
+     * @param element 节点
+     * @param title 文件标题
+     * @return 文件信息
      */
     private ConfEntity getConfEntity(Element element, String title){
         Iterator iterator = element.nodeIterator();
@@ -87,7 +87,6 @@ public class ReadCoreXml {
                         confEntity.setType(value);
                         break;
                 }
-
             }
         }
         if (confEntity != null){
@@ -99,7 +98,7 @@ public class ReadCoreXml {
 
     /**
      * 获取配置文件中的数据
-     * @return
+     * @return 所有的文件信息
      */
     public List<ConfEntity> getConfEntities() {
         try {

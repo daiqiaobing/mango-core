@@ -20,9 +20,9 @@ public class BaseCache {
 
     /**
      * 获取t对应的全部的名称，包括 className + (fieldName|methodName) + type(public|protected....)
-     * @param t
-     * @param <T>
-     * @return
+     * @param t 对象
+     * @param <T> 范型
+     * @return 返回的对象
      */
     protected static <T> String getBaseCacheName(T t){
         if (t instanceof Field){
@@ -39,9 +39,9 @@ public class BaseCache {
 
     /**
      * 获取t对应的全部的名称，包括 className + (fieldName|methodName) + type(public|protected....)
-     * @param t
-     * @param <T>
-     * @return
+     * @param t 对象
+     * @param <T> 范型
+     * @return 返回的对象
      */
     protected static <T> String getCacheClassName(T t){
         if (t instanceof Field){
@@ -58,9 +58,9 @@ public class BaseCache {
 
     /**
      * 获取对应的类的名+注解名
-     * @param t
-     * @param <T>
-     * @return
+     * @param t 对象
+     * @param <T> 范型
+     * @return 返回的对象
      */
     protected static <T, E> String getCacheClassAnnotationName(T t, E e){
         if (t instanceof Class && e instanceof Class){

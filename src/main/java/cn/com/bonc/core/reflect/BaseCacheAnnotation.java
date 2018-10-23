@@ -28,12 +28,12 @@ public class BaseCacheAnnotation extends BaseCache{
 
     /**
      * 获取满足的注解
-     * @param t
-     * @param annotation
-     * @param <T>
-     * @param <E>
-     * @return
-     * @throws NoSuchAnnotation
+     * @param t 对象
+     * @param annotation 注解
+     * @param <T> 范型
+     * @param <E> 范型
+     * @return 注解
+     * @throws NoSuchAnnotation 没有注解异常
      */
     protected static <T, E> Annotation compareAnnotation(T t, E annotation){
         Annotation[] annotations = getAnnotationsByType(t);
@@ -47,10 +47,10 @@ public class BaseCacheAnnotation extends BaseCache{
 
     /**
      * 获取某一个注解对应的key
-     * @param t
-     * @param e
-     * @param <T>
-     * @return
+     * @param t 对象t
+     * @param e 对象e
+     * @param <T> 范型
+     * @return 名称
      */
     protected static  <T, E> String getCacheName(T t, E e){
         String cacheName = getBaseCacheName(t);
@@ -59,9 +59,9 @@ public class BaseCacheAnnotation extends BaseCache{
 
     /**
      * 获取注解的名称
-     * @param e
-     * @param <E>
-     * @return
+     * @param e 对象e
+     * @param <E> 范型
+     * @return 注解名称
      */
     protected static  <E> String getAnnotationName(E e){
         if (e instanceof Field){
@@ -77,9 +77,9 @@ public class BaseCacheAnnotation extends BaseCache{
 
     /**
      *根据类型返回
-     * @param t
-     * @param <T>
-     * @return
+     * @param t 对象t
+     * @param <T> 范型
+     * @return 返回所有的注解
      */
     protected static <T> Annotation[] getAnnotationsByType(T t) {
         if (t instanceof Field){

@@ -17,9 +17,6 @@ public class CacheField extends BaseCacheField{
 
     /**
      * 从缓存中获取所有的字段，存储的格式为className + _DECLARE
-     * @param t
-     * @param <T>
-     * @return
      */
     protected static <T> Field[] getDeclaredFields(Class<T> t){
         ConcurrentHashMap<String, Field[]> allFields = getInstance().getFields();
@@ -36,9 +33,6 @@ public class CacheField extends BaseCacheField{
 
     /**
      * 从缓存中获取所有的字段，存储的格式为className + _DECLARE
-     * @param t
-     * @param <T>
-     * @return
      */
     protected static <T> Field getDeclaredField(Class<T> t, String fieldName) throws NoSuchFieldException  {
         ConcurrentHashMap<String, Field[]> allFields = getInstance().getFields();
@@ -60,9 +54,6 @@ public class CacheField extends BaseCacheField{
 
     /**
      * 从缓存中获取所有的字段，存储的格式为className + _DECLARE
-     * @param t
-     * @param <T>
-     * @return
      */
     protected static <T> Field[] getFields(Class<T> t){
         ConcurrentHashMap<String, Field[]> allFields = getInstance().getFields();
@@ -78,9 +69,6 @@ public class CacheField extends BaseCacheField{
 
     /**
      * 从缓存中获取所有的字段，存储的格式为className + _DECLARE
-     * @param t
-     * @param <T>
-     * @return
      */
     protected static <T> Field getField(Class<T> t, String fieldName) throws NoSuchFieldException  {
         ConcurrentHashMap<String, Field[]> allFields = getInstance().getFields();
@@ -114,11 +102,6 @@ public class CacheField extends BaseCacheField{
 
     /**
      * 根据注解获取对应的字段
-     * @param clazz
-     * @param annotation
-     * @param <T>
-     * @param <E>
-     * @return
      */
     protected static <T, E> Field[] getDeclaredFields(Class<T> clazz, Class<E> annotation) throws IllegalAccessException, InstantiationException {
         String key = getCacheClassAnnotationName(clazz, annotation);

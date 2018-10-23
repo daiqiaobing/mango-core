@@ -1,0 +1,22 @@
+{
+    "title" : "mango-core工具API调用说明",
+    "author" : "mango",
+    "description" : "mango-core工具API调用说明",
+    "language" : "zh-hans",
+    "links" : {
+        "sidebar" : {
+            "Home" : "http://mangowork.cn"
+        }
+    },
+    "plugins": ["splitter", "search-pro", "tbfed-pagefooter", "theme-default", "toggle-chapters", "back-to-top-button", "katex", "expandable-chapters"],
+    "pluginsConfig": {
+        "tbfed-pagefooter": {
+            "copyright":"Copyright &copy dai.mangowork.cn 2018",
+            "modify_label": "文档修改时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "theme-default": {
+            "showLevel": true
+        }        
+    }
+}

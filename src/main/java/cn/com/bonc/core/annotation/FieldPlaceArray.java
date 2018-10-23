@@ -14,25 +14,25 @@ public @interface FieldPlaceArray {
 
     /**
      * 现实字段对应的在数组中的位置
-     * @return
+     * @return 默认返回0
      */
     int place() default 0;
 
     /**
      * 是否使用该字段
-     * @return
+     * @return 默认返回true
      */
     boolean use() default true;
 
     /**
      * 描述字段的大的分类
-     * @return
+     * @return 默认返回AOI
      */
     String type() default "AOI";
 
     /**
      * 字段描述
-     * @return
+     * @return 默认返回空字符串
      */
     String desc() default "";
 }

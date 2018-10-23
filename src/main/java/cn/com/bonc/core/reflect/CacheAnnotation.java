@@ -21,11 +21,11 @@ public class CacheAnnotation extends BaseCacheAnnotation{
 
     /**
      * 获取对应的缓存的注解,如果没有，则返回null
-     * @param t
-     * @param e
-     * @param <T>
-     * @return
-     * @throws NoSuchAnnotation
+     * @param t 对象t
+     * @param e 对象e
+     * @param <T> 范型
+     * @return 取对应的缓存的注解,如果没有，则返回null
+     * @throws NoSuchAnnotation 没有注解异常
      */
     protected static <T, E> Annotation getAnnotation(T t, E e) {
         ConcurrentHashMap<String, Annotation> allAnnotations = getInstance().getAllAnnotations();
@@ -58,11 +58,10 @@ public class CacheAnnotation extends BaseCacheAnnotation{
 
     /**
      * 获取对应的缓存的注解
-     * @param t
-     * @param t
-     * @param <T>
-     * @return
-     * @throws NoSuchAnnotation
+     * @param t 对象t
+     * @param <T> 范型
+     * @return 获取对应的缓存的注解
+     * @throws NoSuchAnnotation 没有注解异常
      */
     protected static <T> Annotation[] getAnnotations(T t) {
         ConcurrentHashMap<String, Annotation[]> allAnnotations = getInstance().getAnnotations();

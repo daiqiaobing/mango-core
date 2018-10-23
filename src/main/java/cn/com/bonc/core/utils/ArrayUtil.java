@@ -17,6 +17,14 @@ import java.util.List;
 public class ArrayUtil {
 
 
+    /**
+     * 将array转换为对象
+     * @param tClass 转为的class
+     * @param data 数据
+     * @param <T> 范型
+     * @return 对象
+     * @throws Exception 转换异常
+     */
     public static  <T> T arrayToObject(Class<T> tClass, Object[] data) throws Exception {
         T t = tClass.newInstance();
         Field[] fields = t.getClass().getDeclaredFields();

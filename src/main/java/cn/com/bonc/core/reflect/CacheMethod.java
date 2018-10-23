@@ -16,9 +16,9 @@ public class CacheMethod extends BaseCacheMethod{
 
     /**
      * 从缓存中获取所有的方法, 缓存中的存取的方式为对应的className + _DECLARE
-     * @param t
-     * @param <T>
-     * @return
+     * @param t class
+     * @param <T> 范型
+     * @return 所有的方法
      */
     protected static <T> Method[] getDeclaredMethods(Class<T> t){
         ConcurrentHashMap<String, Method[]> allMethods = getInstance().getMethods();
@@ -34,9 +34,9 @@ public class CacheMethod extends BaseCacheMethod{
 
     /**
      * 从缓存中获取所有的方法,缓存中的存取的方式为对应的className
-     * @param t
-     * @param <T>
-     * @return
+     * @param t class
+     * @param <T> 范型
+     * @return 所有的方法
      */
     protected static <T> Method[] getMethods(Class<T> t){
         ConcurrentHashMap<String, Method[]> allMethods = getInstance().getMethods();
@@ -52,9 +52,9 @@ public class CacheMethod extends BaseCacheMethod{
 
     /**
      * 从缓存中获取满足的方法
-     * @param t
-     * @param <T>
-     * @return
+     * @param t class
+     * @param <T> 范型
+     * @return 方法
      */
     protected static <T> Method getDeclaredMethod(Class<T> t, String methodName, Class<?>... parameters) throws NoSuchMethodException {
         ConcurrentHashMap<String, Method[]> allMethods = getInstance().getMethods();
@@ -71,9 +71,9 @@ public class CacheMethod extends BaseCacheMethod{
 
     /**
      * 从缓存中获取满足的方法
-     * @param t
-     * @param <T>
-     * @return
+     * @param t class
+     * @param <T> 范型
+     * @return 的方法
      */
     protected static <T> Method getMethod(Class<T> t, String methodName, Class<?>... parameters) throws NoSuchMethodException {
         ConcurrentHashMap<String, Method[]> allMethods = getInstance().getMethods();
