@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.mangowork</groupId>
     <artifactId>mango-core</artifactId>
-    <version>1.0.2-release</version>
+    <version>1.0.3-release</version>
     <name>mango-core</name>
     <url>http://www.mangowork.cn</url>
     <description>基本工具的开发</description>
@@ -58,6 +58,14 @@
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- 格式化对象，方便输出日志 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.11</version>
+
         </dependency>
 
         <dependency>
