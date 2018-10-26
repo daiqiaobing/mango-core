@@ -1,17 +1,23 @@
 package cn.mangowork.core.thread.future;
 
+import java.util.Map;
+
 /**
- * @author
- * @create 2018-05-15 13:41
+ * @author dailiming 2018-10-26 16:34
+ * @version v1
+ * 具体实现结果的获取
  **/
 
-public class FutureData<R, T extends RealData<R>> implements BaseData<R>{
+public class FutureData<K, V> implements IData<K, V> {
 
-    private T realData;
-
+    private HandleData<K, V> realData;
     private boolean isReady = false;
 
-    public synchronized  void setRealData(T realData) {
+    public HandleData getRealData() {
+        return realData;
+    }
+
+    public synchronized  void setRealData(HandleData<K, V> realData) {
         if (isReady){
             return;
         }
@@ -20,22 +26,12 @@ public class FutureData<R, T extends RealData<R>> implements BaseData<R>{
         notifyAll();
     }
 
-    public T getRealData() {
-        return this.realData;
-    }
-
     @Override
-    public synchronized R getResult() throws InterruptedException {
+    public synchronized  Map<K, V> getResult() throws InterruptedException {
         if (!isReady){
             wait();
         }
-        return this.realData.getResult();
+        return realData.getResult();
     }
-
-    @Override
-    public void handle() {
-
-    }
-
 
 }

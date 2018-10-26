@@ -85,3 +85,38 @@ public class TestMasterWorker extends TestCase {
 ```
 
 
+
+#### 多线程Future模式
+
+对应的代码在`cn.mangowork.core.thread.future`目录下，调用方式如下所示：
+
+```java
+
+public class TestFuture extends TestCase {
+
+    public void testFuture() throws InterruptedException {
+        MyHandle myHandle = new MyHandle();
+        Future<String, String> listFuture = new Future<>(myHandle);
+        Map result = listFuture.handle().getResult();
+
+    }
+
+    protected class  MyHandle extends HandleData<String, String>{
+
+        @Override
+        void handle() {
+            for (int i=0; i< 10; i++){
+                super.data.put("结果" + i, i + "");
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+}
+
+```
+
