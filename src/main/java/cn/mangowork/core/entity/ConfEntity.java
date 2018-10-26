@@ -73,4 +73,6 @@ public class ConfEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }

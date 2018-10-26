@@ -12,10 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author dailiming
+ * @author dailiming 2018-10-22 11:40
  * @version v1
  * 获取配置信息对应的值,获取流程，当需要使用的时候将数据加载到内存中(只加载一次)
- * @create 2018-10-22 11:40
  **/
 
 public class EnvMapClient {
@@ -65,7 +64,7 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
-    public static String getStrValueByKey(Object key){
+    public static String getStringByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         String result = null;
         if (obj != null){
@@ -80,7 +79,7 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
-    public static String getSingleStrValueByKey(Object key1, Object key2){
+    public static String getSingleStringByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         String result = null;
         if (obj != null){
@@ -94,7 +93,7 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
-    public static Integer getIntValueByKey(Object key){
+    public static Integer getIntByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         Integer result = null;
         if (obj != null){
@@ -113,7 +112,7 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
-    public static Integer getSingleIntValueByKey(Object key1, Object key2){
+    public static Integer getSingleIntByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         Integer result = null;
         if (obj != null){
@@ -132,7 +131,7 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
-    public static Float getFloatValueByKey(Object key){
+    public static Float getFloatByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         Float result = null;
         if (obj != null){
@@ -151,7 +150,7 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
-    public static Float getSingleFloatValueByKey(Object key1, Object key2){
+    public static Float getSingleFloatByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         Float result = null;
         if (obj != null){
@@ -170,7 +169,7 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
-    public static List getListValueByKey(Object key){
+    public static List getListByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         List result = null;
         if (obj != null){
@@ -185,7 +184,7 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
-    public static List getSingleListValueByKey(Object key1, Object key2){
+    public static List getSingleListByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         List result = null;
         if (obj != null){
@@ -195,7 +194,7 @@ public class EnvMapClient {
     }
     /**
      * 获取所有的文件的配置信息
-     * @return
+     * @return 获取所有的文件的配置信息
      */
     private static List<ConfEntity> getConfEntities() {
         if (confEntities == null) {

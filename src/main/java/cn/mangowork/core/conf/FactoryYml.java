@@ -11,10 +11,9 @@ import java.io.*;
 import java.util.*;
 
 /**
- * @author dailiming
+ * @author dailiming 2018-10-22 11:16
  * @version v1
  * yml读取工厂
- * @create 2018-10-22 11:16
  **/
 
 public class FactoryYml implements FactoryConfiguration {
@@ -47,7 +46,7 @@ public class FactoryYml implements FactoryConfiguration {
         if (baseKey == null || "".equals(baseKey.trim())){
             curKey = "";
         }else {
-            curKey = baseKey.trim() + EnvConstant.FILE_YML_KEY_JOIN;
+            curKey = baseKey.trim() + EnvConstant.FILE_KEY_JOIN;
         }
 
         for (Object key: map.keySet()){
@@ -77,9 +76,7 @@ public class FactoryYml implements FactoryConfiguration {
         try {
             InputStream resourceAsStream = new BufferedInputStream(new FileInputStream(EnvConstant.FILE_BASIC_PATH + path));
             results = (Map)yaml.load(resourceAsStream);
-            if (resourceAsStream != null){
-                resourceAsStream.close();
-            }
+            resourceAsStream.close();
         }catch (FileNotFoundException e){
             String message = "没有找到对应的配置文件，路径为" + EnvConstant.FILE_BASIC_PATH + path + "\n" + e.getMessage();
             logger.error(message);

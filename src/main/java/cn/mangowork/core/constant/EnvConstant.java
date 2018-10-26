@@ -1,10 +1,9 @@
 package cn.mangowork.core.constant;
 
 /**
- * @author dailiming
+ * @author dailiming 2018-10-18 12:01
  * @version v1
  * 环境对应的常量
- * @create 2018-10-18 12:01
  **/
 
 public class EnvConstant {
@@ -33,6 +32,6 @@ public class EnvConstant {
     public static final String FILE_SCOPE_SINGLE = "single";
 
     /**yaml中key连接符号*/
-    public static final String FILE_YML_KEY_JOIN = ".";
+    public static final String FILE_KEY_JOIN = ".";
 
 }
