@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.mangowork</groupId>
     <artifactId>mango-core</artifactId>
-    <version>1.0.3-release</version>
+    <version>1.0.4-release</version>
     <name>mango-core</name>
-    <url>http://www.mangowork.cn</url>
+    <url>https://github.com/mangoWork/blog-dai</url>
     <description>基本工具的开发</description>
 
     <scm>
-        <connection>scm:git:http://gitlab.corp.chengxiang.com/mobile_hotel_res/phone_spider_project</connection>
+        <connection>scm:git:https://github.com/mangoWork/blog-dai</connection>
         <developerConnection>scm:git:git@github.com:daiqiaobing/mango-core.git</developerConnection>
         <url>https://github.com/daiqiaobing/mango-core</url>
     </scm>
