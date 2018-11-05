@@ -6,6 +6,7 @@ import cn.mangowork.core.entity.ConfResultEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.management.DescriptorKey;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -58,12 +59,21 @@ public class EnvMapClient {
     }
 
 
+    /**
+     * 获取字符串结果
+     * @param key 索引
+     * @return 索引对应的值
+     */
+    public static String get(Object key){
+        return getStringByKey(key);
+    }
 
     /**
      * 获取字符串结果
      * @param key 索引
      * @return 索引对应的值
      */
+    @Deprecated
     public static String getStringByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         String result = null;
@@ -73,12 +83,24 @@ public class EnvMapClient {
         return result;
     }
 
+
     /**
      * 获取字符串结果
      * @param key1  配置文件中的索引1
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
+    public static String getSingle(Object key1, Object key2) {
+        return getSingleStringByKey(key1, key2);
+    }
+
+        /**
+         * 获取字符串结果
+         * @param key1  配置文件中的索引1
+         * @param key2  索引2
+         * @return 索引1以及索引2所对应的值
+         */
+        @Deprecated
     public static String getSingleStringByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         String result = null;
@@ -93,6 +115,16 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
+    public static Integer getInt(Object key) {
+        return getIntByKey(key);
+    }
+
+    /**
+     * 获取整数结果
+     * @param key 索引
+     * @return 索引对应的值
+     */
+    @Deprecated
     public static Integer getIntByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         Integer result = null;
@@ -106,12 +138,24 @@ public class EnvMapClient {
         return result;
     }
 
+
     /**
      * 获取字符串结果
      * @param key1  配置文件中的索引1
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
+    public static Integer getSingleInt(Object key1, Object key2){
+        return getSingleIntByKey(key1, key2);
+    }
+
+    /**
+     * 获取字符串结果
+     * @param key1  配置文件中的索引1
+     * @param key2  索引2
+     * @return 索引1以及索引2所对应的值
+     */
+    @Deprecated
     public static Integer getSingleIntByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         Integer result = null;
@@ -125,12 +169,21 @@ public class EnvMapClient {
         return result;
     }
 
+    /**
+     * 获取浮点数结果
+     * @param key 索引
+     * @return 索引对应的值
+     */
+    public static Float getFloat(Object key){
+        return getFloatByKey(key);
+    }
 
     /**
      * 获取浮点数结果
      * @param key 索引
      * @return 索引对应的值
      */
+    @Deprecated
     public static Float getFloatByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         Float result = null;
@@ -150,6 +203,17 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
+    public static Float getSingleFloat(Object key1, Object key2){
+        return getSingleFloatByKey(key1, key2);
+    }
+
+    /**
+     * 获取浮点数结果
+     * @param key1  配置文件中的索引1
+     * @param key2  索引2
+     * @return 索引1以及索引2所对应的值
+     */
+    @Deprecated
     public static Float getSingleFloatByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         Float result = null;
@@ -169,6 +233,16 @@ public class EnvMapClient {
      * @param key 索引
      * @return 索引对应的值
      */
+    public static List getList(Object key){
+        return getListByKey(key);
+    }
+
+    /**
+     * 获集合结果
+     * @param key 索引
+     * @return 索引对应的值
+     */
+    @Deprecated
     public static List getListByKey(Object key){
         ConfResultEntity obj  = getByKey(key);
         List result = null;
@@ -184,6 +258,17 @@ public class EnvMapClient {
      * @param key2  索引2
      * @return 索引1以及索引2所对应的值
      */
+    public static List getSingleList(Object key1, Object key2){
+        return getSingleListByKey(key1, key2);
+    }
+
+    /**
+     * 获取集合结果
+     * @param key1  配置文件中的索引1
+     * @param key2  索引2
+     * @return 索引1以及索引2所对应的值
+     */
+    @Deprecated
     public static List getSingleListByKey(Object key1, Object key2){
         ConfResultEntity obj  = getSingleByKey(key1, key2);
         List result = null;

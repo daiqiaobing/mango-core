@@ -3,6 +3,7 @@ package cn.mangowork.core.conf;
 import cn.mangowork.core.constant.EnvConstant;
 import cn.mangowork.core.entity.ConfEntity;
 import cn.mangowork.core.entity.ConfResultEntity;
+import cn.mangowork.core.utils.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.yaml.snakeyaml.Yaml;
@@ -74,11 +75,11 @@ public class FactoryYml implements FactoryConfiguration {
         Yaml yaml = new Yaml();
         logger.info("读取配置文件{}", path);
         try {
-            InputStream resourceAsStream = new BufferedInputStream(new FileInputStream(EnvConstant.FILE_BASIC_PATH + path));
+            InputStream resourceAsStream = new BufferedInputStream(new FileInputStream(FileUtils.getFileByPath(path)));
             results = (Map)yaml.load(resourceAsStream);
             resourceAsStream.close();
         }catch (FileNotFoundException e){
-            String message = "没有找到对应的配置文件，路径为" + EnvConstant.FILE_BASIC_PATH + path + "\n" + e.getMessage();
+            String message = "没有找到对应的配置文件" +  path + "\n" + e.getMessage();
             logger.error(message);
             throw new FileNotFoundException(message);
         }

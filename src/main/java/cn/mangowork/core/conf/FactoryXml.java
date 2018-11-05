@@ -3,6 +3,7 @@ package cn.mangowork.core.conf;
 import cn.mangowork.core.constant.EnvConstant;
 import cn.mangowork.core.entity.ConfEntity;
 import cn.mangowork.core.entity.ConfResultEntity;
+import cn.mangowork.core.utils.FileUtils;
 import org.dom4j.*;
 import org.dom4j.io.SAXReader;
 import org.slf4j.Logger;
@@ -58,7 +59,7 @@ public class FactoryXml implements FactoryConfiguration {
      */
     private Map<Object, ConfResultEntity> getXMLByFile(String path) throws FileNotFoundException, DocumentException {
         SAXReader saxReader = new SAXReader();
-        Document document = saxReader.read(new FileInputStream(new File(EnvConstant.FILE_BASIC_PATH + path)));
+        Document document = saxReader.read(new FileInputStream(FileUtils.getFileByPath(path)));
         // 获取根节点
         Element rootElement = document.getRootElement();
         return getChildResult(rootElement, "");
